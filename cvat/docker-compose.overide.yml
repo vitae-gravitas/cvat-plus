@@ -1,0 +1,15 @@
+version: "2.3"
+
+services:
+  cvat:
+    environment:
+      CVAT_SHARE_URL: "Mounted from /Users/tejasvikothapalli/Desktop/LiftingVideos/test host directory"
+    volumes:
+      - cvat_share:/home/django/share:ro
+
+volumes:
+  cvat_share:
+    driver_opts:
+      type: none
+      device: ./Lifting-Videos
+      o: bind
